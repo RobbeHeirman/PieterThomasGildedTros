@@ -1,0 +1,9 @@
+# Python
+*.pyc
+.cache
+.coverage
+*.iml
+venv/
+
+# Pycharm
+.idea/
