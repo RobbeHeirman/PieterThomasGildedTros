@@ -30,4 +30,4 @@ if __name__ == "__main__":
         for item in items:
             print(item)
         print("")
-        GildedTros(items).update_quality()
+        GildedTros(items).update_items()

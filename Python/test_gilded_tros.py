@@ -13,7 +13,7 @@ class GildedTrosTest(unittest.TestCase):
         for x in range(0, 6):
             sell_in -= 1
             quality -= 1 if items[0].sell_in > 0 else 2
-            gilded_tros.update_quality()
+            gilded_tros.update_items()
             self.assertEqual(first="foo", second=items[0].name)
             self.assertEqual(first=sell_in, second=items[0].sell_in)
             self.assertEqual(first=quality, second=items[0].quality)
@@ -24,11 +24,11 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=0, second=items[0].sell_in)
         self.assertEqual(first=2, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=-1, second=items[0].sell_in)
         self.assertEqual(first=0, second=items[0].quality)
 
@@ -38,7 +38,7 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=-1, second=items[0].sell_in)
         self.assertEqual(first=0, second=items[0].quality)
 
@@ -48,11 +48,11 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=0, second=items[0].sell_in)
         self.assertEqual(first=1, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=-1, second=items[0].sell_in)
         self.assertEqual(first=3, second=items[0].quality)
 
@@ -62,7 +62,7 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=-1, second=items[0].sell_in)
         self.assertEqual(first=50, second=items[0].quality)
 
@@ -72,11 +72,11 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=1, second=items[0].sell_in)
         self.assertEqual(first=80, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=1, second=items[0].sell_in)
         self.assertEqual(first=80, second=items[0].quality)
 
@@ -86,31 +86,31 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=5, second=items[0].sell_in)
         self.assertEqual(first=22, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=4, second=items[0].sell_in)
         self.assertEqual(first=25, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=3, second=items[0].sell_in)
         self.assertEqual(first=28, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=2, second=items[0].sell_in)
         self.assertEqual(first=31, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=1, second=items[0].sell_in)
         self.assertEqual(first=34, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=0, second=items[0].sell_in)
         self.assertEqual(first=37, second=items[0].quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         self.assertEqual(first=-1, second=items[0].sell_in)
         self.assertEqual(first=0, second=items[0].quality)
 
@@ -122,12 +122,12 @@ class GildedTrosTest(unittest.TestCase):
         ]
         gilded_tros = GildedTros(items=items)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         for item in items:
             self.assertEqual(first=0, second=item.sell_in)
             self.assertEqual(first=6, second=item.quality)
 
-        gilded_tros.update_quality()
+        gilded_tros.update_items()
         for item in items:
             self.assertEqual(first=-1, second=item.sell_in)
             self.assertEqual(first=2, second=item.quality)
