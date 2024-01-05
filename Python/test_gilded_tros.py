@@ -5,11 +5,13 @@ from gilded_tros import Item, GildedTros
 
 
 class GildedTrosTest(unittest.TestCase):
+    # TODO: "test_foo" is not a clear test name. rename to test_normal_item.
     def test_foo(self) -> None:
         sell_in = 5
         quality = 9
         items = [Item(name="foo", sell_in=sell_in, quality=quality)]
         gilded_tros = GildedTros(items=items)
+        # TODO: Coding tip "for sell_in range(0, 6, -1)" saves you a variable
         for x in range(0, 6):
             sell_in -= 1
             quality -= 1 if items[0].sell_in > 0 else 2
@@ -57,6 +59,7 @@ class GildedTrosTest(unittest.TestCase):
         self.assertEqual(first=3, second=items[0].quality)
 
     def test_quality_not_over_50(self) -> None:
+        # TODO: Tested on good wines. Complete the test for all item types.
         items = [
             Item(name="Good Wine", sell_in=0, quality=49)
         ]
@@ -131,6 +134,21 @@ class GildedTrosTest(unittest.TestCase):
         for item in items:
             self.assertEqual(first=-1, second=item.sell_in)
             self.assertEqual(first=2, second=item.quality)
+
+    # TODO: Added test
+    def test_item_init(self) -> None:
+        items = [
+            Item(name="foo", sell_in=40, quality=80),
+        ]
+
+        self.assertLessEqual(items[0].quality, 50)
+
+    # TODO: Added test
+    def test_legendary_item_deteriorate(self) -> None:
+        items = [Item("B-DAWG Keychain", sell_in=55, quality=99)]
+        self.assertLessEqual(items[0].quality, 80)
+        GildedTros(items).update_items()
+        self.assertEqual(99, items[0].quality)
 
 
 if __name__ == '__main__':

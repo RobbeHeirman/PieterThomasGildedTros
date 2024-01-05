@@ -1,0 +1,13 @@
+GENERAL:
+Good:
+ - TDD
+ - The test cases covered the important edge cases.
+
+To improve:
+ - Commits are too big.
+ - We did not decouple the logic for each different type of item. What if changes are requested. What if new items are requested.
+ - QA (Me :)) Found a bug if we try to initialize items over there default max QUALITY.
+
+Missing:
+ - No way to compare old and new results. Capturing the initial fixture would have been a good test.
+

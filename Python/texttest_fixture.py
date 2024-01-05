@@ -21,6 +21,7 @@ if __name__ == "__main__":
     ]
 
     days = 2
+    # TODO: Conditional import.
     import sys
     if len(sys.argv) > 1:
         days = int(sys.argv[1]) + 1
